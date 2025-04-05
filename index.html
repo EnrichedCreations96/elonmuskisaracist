@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elon Musk's Racial Controversies | The Turd Report</title>
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #f8f9fa;
+            --text-color: #202124;
+            --light-text: #5f6368;
+            --border-color: #dadce0;
+            --accent-color: #ea4335;
+            --header-bg: #202124;
+            --quote-bg: #f1f3f4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .navbar li {
+            margin-left: 20px;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .navbar a:hover {
+            opacity: 1;
+        }
+        
+        /* Main content */
+        main {
+            padding: 40px 0;
+        }
+        
+        .article-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+        
+        .article-category {
+            color: var(--accent-color);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .article-title {
+            font-size: 36px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            color: var(--light-text);
+            font-size: 14px;
+        }
+        
+        .article-author {
+            font-weight: 500;
+            margin-right: 10px;
+        }
+        
+        .article-date {
+            margin-left: 10px;
+        }
+        
+        .article-lead {
+            font-size: 20px;
+            line-height: 1.5;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .article-featured-image {
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .article-featured-image img {
+            width: 100%;
+            display: block;
+        }
+        
+        .image-caption {
+            font-size: 14px;
+            color: var(--light-text);
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        .article-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        .article-main {
+            font-size: 18px;
+        }
+        
+        .article-main p {
+            margin-bottom: 25px;
+        }
+        
+        .article-main h2 {
+            font-size: 24px;
+            margin: 40px 0 20px;
+            color: var(--text-color);
+        }
+        
+        .article-main h3 {
+            font-size: 20px;
+            margin: 30px 0 15px;
+            color: var(--text-color);
+        }
+        
+        .article-sidebar {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        
+        .sidebar-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        /* Components */
+        .article-quote {
+            padding: 20px;
+            background-color: var(--quote-bg);
+            border-left: 4px solid var(--primary-color);
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 18px;
+        }
+        
+        .quote-source {
+            display: block;
+            font-size: 14px;
+            margin-top: 10px;
+            font-style: normal;
+            color: var(--light-text);
+            text-align: right;
+        }
+        
+        .case-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .case-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .case-title {
+            font-size: 20px;
+            margin: 0;
+        }
+        
+        .case-content {
+            padding: 20px;
+        }
+        
+        .case-details {
+            margin-bottom: 15px;
+        }
+        
+        .case-quote {
+            background-color: var(--quote-bg);
+            padding: 15px;
+            border-radius: 4px;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .case-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .case-link:hover {
+            text-decoration: underline;
+        }
+        
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-description {
+            font-size: 16px;
+            color: var(--light-text);
+        }
+        
+        .timeline {
+            margin: 30px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .timeline-date {
+            width: 120px;
+            padding-right: 20px;
+            font-weight: 500;
+            text-align: right;
+            font-size: 16px;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding-left: 25px;
+            padding-bottom: 20px;
+            border-left: 2px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: "";
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .timeline-content h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        /* Evidence section */
+        .evidence-list {
+            margin: 30px 0;
+        }
+        
+        .evidence-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .evidence-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .evidence-content {
+            margin-bottom: 15px;
+        }
+        
+        .evidence-source {
+            font-size: 14px;
+            color: var(--light-text);
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .source-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .source-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Sidebar components */
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .sidebar-image {
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-image img {
+            width: 100%;
+            border-radius: 4px;
+        }
+        
+        .related-stories {
+            margin-top: 15px;
+        }
+        
+        .related-story {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .related-story:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .related-image {
+            width: 80px;
+            height: 60px;
+            border-radius: 4px;
+            margin-right: 15px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+        
+        .related-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .related-title {
+            flex: 1;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .related-link {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .related-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .citation {
+            font-size: 14px;
+            color: var(--light-text);
+            margin-top: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--header-bg);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .disclaimer {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .article-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .article-title {
+                font-size: 28px;
+            }
+            
+            .navbar {
+                display: none;
+            }
+            
+            .timeline-date {
+                width: 80px;
+                font-size: 14px;
+            }
+            
+            .stat-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">The <span>Turd</span> Report</a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Politics</a></li>
+                    <li><a href="#">Tech</a></li>
+                    <li><a href="#">Investigations</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <article>
+            <div class="article-header">
+                <div class="article-category">INVESTIGATION</div>
+                <h1 class="article-title">Documented: Elon Musk's Racial Controversies</h1>
+                <div class="article-meta">
+                    <span class="article-author">By Investigative Staff</span> | 
+                    <span class="article-date">April 5, 2025</span>
+                </div>
+            </div>
+            
+            <p class="article-lead">Following Musk's controversial gesture at Trump's inauguration, we examine the documented racial discrimination lawsuits against Tesla and Musk's comments about South Africa.</p>
+            
+            <div class="article-featured-image">
+                <img src="https://i.imgur.com/IVWbMy0.gif" alt="Elon Musk Gesture at Trump Inauguration">
+                <p class="image-caption">Elon Musk performing a controversial gesture at Trump's inauguration celebration, January 20, 2025.</p>
+            </div>
+            
+            <div class="article-content">
+                <div class="article-main">
+                    <p>On January 20, 2025, Elon Musk made a controversial gesture during Donald Trump's inauguration that sparked global debate. As documented on video and reported widely, Musk placed his hand on his chest and then extended his arm outward while saying "My heart goes out to you."</p>
+                    <p class="citation">Source: Video footage from January 20, 2025, Trump inauguration event.</p>
+                    
+                    <p>This incident has renewed interest in examining Musk's documented history of racial controversies, particularly the multiple racial discrimination lawsuits against Tesla and his recent comments about South Africa.</p>
+                    
+                    <h2>Tesla Racial Discrimination Lawsuits</h2>
+                    
+                    <div class="case-card">
+                        <div class="case-header">
+                            <h3 class="case-title">California DFEH v. Tesla (2022)</h3>
+                        </div>
+                        <div class="case-content">
+                            <p class="case-details">In February 2022, California's Department of Fair Employment and Housing filed a lawsuit against Tesla after a three-year investigation into conditions at the company's Fremont factory.</p>
+                            <div class="case-quote">
+                                "After receiving hundreds of complaints from workers, DFEH found evidence that Tesla operates a racially segregated workplace where Black workers are subjected to racial slurs and discriminated against in job assignments, discipline, pay, and promotion."
+                            </div>
+                            <p class="citation">Source: California Department of Fair Employment and Housing lawsuit filed February 2022 as reported by Newsweek on February 14, 2022.</p>
+                            <p>According to the official lawsuit, Black workers at Tesla were subjected to racial slurs, with some reporting hearing such slurs "as often as 50-100 times a day." The lawsuit further claimed that some areas of the factory were described as "the plantation" or "the slave ship" due to racial segregation.</p>
+                            <p class="citation">Source: NPR, "California sues Tesla over alleged rampant discrimination against Black employees," February 11, 2022.</p>
+                            <a href="https://www.newsweek.com/tesla-faces-californias-largest-ever-racial-discrimination-lawsuit-1678641" class="case-link" target="_blank">Read the Newsweek report on the lawsuit</a>
+                        </div>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-header">
+                            <h3 class="case-title">Owen Diaz v. Tesla</h3>
+                        </div>
+                        <div class="case-content">
+                            <p class="case-details">Former elevator operator Owen Diaz sued Tesla for racial discrimination in 2017. In April 2023, a federal jury awarded him $3.2 million in damages, and the case was settled in March 2024.</p>
+                            <div class="case-quote">
+                                "The evidence was disturbing. The jury heard that the Tesla factory was saturated with racism."
+                            </div>
+                            <p class="citation">Source: U.S. District Judge William Orrick's written order as reported by NPR on April 14, 2022.</p>
+                            <p>Diaz testified that during his employment at Tesla's Fremont factory, he was subjected to racial slurs and other forms of racial harassment. The case initially resulted in a $137 million verdict that was later reduced by the judge before a new trial on damages.</p>
+                            <p class="citation">Source: CNBC, "Tesla settles racial discrimination lawsuit," March 15, 2024.</p>
+                            <a href="https://www.cnbc.com/2024/03/15/tesla-settles-racial-discrimination-lawsuit.html" class="case-link" target="_blank">Read the CNBC report on the settlement</a>
+                        </div>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-header">
+                            <h3 class="case-title">Marcus Vaughn v. Tesla (Class Action)</h3>
+                        </div>
+                        <div class="case-content">
+                            <p class="case-details">In 2017, Tesla worker Marcus Vaughn filed a lawsuit that has since gathered testimonies from over 240 Black workers alleging racial discrimination at Tesla's Fremont factory. In March 2024, a judge ruled that thousands of Black workers can sue Tesla for racism.</p>
+                            <div class="case-quote">
+                                "Tesla may face a class-action lawsuit after 240 Black factory workers in California described rampant racism and discrimination."
+                            </div>
+                            <p class="citation">Source: Associated Press, "Black workers at California Tesla factory allege rampant racism, seek class-action status," June 7, 2023.</p>
+                            <p>According to court documents, Vaughn complained in writing to human resources and to Tesla CEO Elon Musk about a hostile work environment in which he was called slurs by co-workers and supervisors. The lawsuit claims that no investigation was conducted and Vaughn was fired for "not having a positive attitude."</p>
+                            <p class="citation">Source: TIME, "Thousands of Black Workers Can Sue Tesla for Racism, Judge Rules," March 1, 2024.</p>
+                            <a href="https://time.com/6836236/tesla-racism-lawsuit-black-workers-california/" class="case-link" target="_blank">Read the TIME report on the class action</a>
+                        </div>
+                    </div>
+                    
+                    <h2>Musk's Comments on South Africa</h2>
+                    
+                    <p>Elon Musk was born and raised in South Africa during the apartheid era, leaving the country when he was 17. In recent months, he has made several documented comments about South Africa that have drawn attention:</p>
+                    
+                    <div class="evidence-item">
+                        <h3 class="evidence-title">"Racist Ownership Laws" Statement</h3>
+                        <p class="evidence-content">In February 2025, Musk described South Africa as having "racist ownership laws" after his Starlink satellite internet service was denied a license for not meeting South Africa's affirmative action criteria.</p>
+                        <p class="citation">Source: Washington Post, "Why is Trump punishing South Africa and who are the Afrikaners he wants to give refugee status to?" February 8, 2025.</p>
+                        <div class="case-quote">
+                            "Musk also accused South Africa this week of having 'racist ownership laws,' an apparent reference to his failure to get a license in the country for his Starlink satellite internet service because it doesn't meet affirmative action criteria."
+                        </div>
+                        <span class="evidence-source">Source: <a href="https://www.washingtonpost.com/world/2025/02/08/south-africa-trump-musk-afrikaners/1f0d2822-e60c-11ef-ab83-bb30e4340014_story.html" class="source-link" target="_blank">Washington Post</a></span>
+                    </div>
+                    
+                    <div class="evidence-item">
+                        <h3 class="evidence-title">White Farmer "Genocide" Claims</h3>
+                        <p class="evidence-content">Musk has claimed that South Africa's government is ignoring or encouraging a "genocide" with regard to the killings of white farmers.</p>
+                        <p class="citation">Source: NBC News, "How a land law sparked Elon Musk's accusations of 'genocide' against his home country," February 11, 2025.</p>
+                        <div class="case-quote">
+                            "Musk has described South Africa as having 'racist ownership laws,' accusing its government of failing to stop what he has referred to as a 'genocide' against white farmers."
+                        </div>
+                        <span class="evidence-source">Source: <a href="https://www.nbcnews.com/news/world/south-africa-racist-white-farmers-trump-musk-genocide-ramaphosa-rcna190749" class="source-link" target="_blank">NBC News</a></span>
+                    </div>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">February 4, 2025</div>
+                            <div class="timeline-content">
+                                <h3>Musk's Comments on South Africa</h3>
+                                <p>Following Musk's statements on South Africa, Trump threatened to cut off funding to the country over what he called discrimination against white farmers.</p>
+                                <p class="citation">Source: PBS NewsHour, "After Trump's funding threat, South African president phones influential billionaire Musk," February 6, 2025.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">February 7, 2025</div>
+                            <div class="timeline-content">
+                                <h3>Trump Cuts Aid to South Africa</h3>
+                                <p>President Trump signed an executive order freezing assistance to South Africa for a law aiming to address some of the wrongs of South Africa's apartheid era.</p>
+                                <p class="citation">Source: PBS NewsHour, "Trump orders freeze of aid to South Africa over post-apartheid land expropriation law," February 8, 2025.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Other Related Controversies</h2>
+                    
+                    <div class="evidence-item">
+                        <h3 class="evidence-title">Tesla's Response to DFEH Lawsuit</h3>
+                        <p class="evidence-content">When California's civil rights agency filed its lawsuit in 2022, Tesla responded with a blog post titled "The DFEH's Misguided Lawsuit," calling the lawsuit "unfair and counterproductive."</p>
+                        <p class="citation">Source: NPR, "California sues Tesla over alleged rampant discrimination against Black employees," February 11, 2022.</p>
+                        <div class="case-quote">
+                            "On the day the lawsuit was filed, Tesla issued a public blog post, titled 'The DFEH's Misguided Lawsuit,' where it called the lawsuit 'unfair and counterproductive.'"
+                        </div>
+                        <span class="evidence-source">Source: <a href="https://www.npr.org/2022/02/11/1080073061/california-sues-tesla-racism-fremont" class="source-link" target="_blank">NPR</a></span>
+                    </div>
+                    
+                    <div class="evidence-item">
+                        <h3 class="evidence-title">"Thick-Skinned" Email to Employees</h3>
+                        <p class="evidence-content">A 2018 email from Musk to Tesla employees referenced in legal documents advised workers to be "thick-skinned" about harassment.</p>
+                        <p class="citation">Source: Newsweek, "Tesla Faces California's Largest-Ever Racial Discrimination Lawsuit," February 14, 2022.</p>
+                        <div class="case-quote">
+                            "Musk added, 'if someone is a jerk to you, but sincerely apologizes, it is important to be thick-skinned and accept that apology.'"
+                        </div>
+                        <span class="evidence-source">Source: <a href="https://www.newsweek.com/tesla-faces-californias-largest-ever-racial-discrimination-lawsuit-1678641" class="source-link" target="_blank">Newsweek</a></span>
+                    </div>
+                </div>
+                
+                <aside class="article-sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">By The Numbers</h3>
+                        <div class="stat-cards">
+                            <div class="stat-card">
+                                <div class="stat-number">240+</div>
+                                <div class="stat-description">Black Tesla workers who have testified about racial discrimination</div>
+                                <p class="citation">Source: AP News, June 7, 2023</p>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-number">$3.2M</div>
+                                <div class="stat-description">Jury award to Owen Diaz in Tesla racial discrimination case</div>
+                                <p class="citation">Source: CNBC, March 15, 2024</p>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-number">7%</div>
+                                <div class="stat-description">White population in South Africa (owns approx. 70% of farmland)</div>
+                                <p class="citation">Source: Washington Post, February 8, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Allegations from DFEH Lawsuit</h3>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 10px;">✓ Areas referred to as "the plantation" or "slave ship"</li>
+                            <li style="margin-bottom: 10px;">✓ Racial slurs heard "as often as 50-100 times a day"</li>
+                            <li style="margin-bottom: 10px;">✓ Black workers assigned to clean on hands and knees</li>
+                            <li style="margin-bottom: 10px;">✓ Racist graffiti including swastikas left on walls</li>
+                            <li style="margin-bottom: 10px;">✓ Workers with Confederate flag tattoos intimidating Black workers</li>
+                        </ul>
+                        <p class="citation">Source: NPR, February 11, 2022 & California DFEH lawsuit</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Tesla Logo Controversy</h3>
+                        <div class="sidebar-image">
+                            <img src="https://i.imgur.com/xzZ9HsE.jpeg" alt="Tesla logo resembling KKK hood">
+                        </div>
+                        <p>Some critics have pointed out visual similarities between the Tesla logo and a KKK hood when viewed from certain angles.</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Related Stories</h3>
+                        <div class="related-stories">
+                            <div class="related-story">
+                                <div class="related-image">
+                                    <img src="https://www.statesman.com/gcdn/authoring/authoring-images/2025/03/28/USAT/82705863007-20250326-t-100239-z-89399162-rc-2-jscajk-6-lx-rtrmadp-3-usatrumpmuskdoge.JPG?crop=4952,2787,x0,y302&width=660&height=371&format=pjpg&auto=webp" alt="Trump and Musk">
+                                </div>
+                                <div class="related-title">
+                                    <a href="https://www.pbs.org/newshour/world/trump-orders-freeze-of-aid-to-south-africa-over-post-apartheid-land-expropriation-law" class="related-link" target="_blank">Trump Freezes Aid to South Africa After Musk's Claims</a>
+                                </div>
+                            </div>
+                            
+                            <div class="related-story">
+                                <div class="related-image">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjp7MKzJkzmzIxvnEv9v3_rsmzeLCqciU4Tg&s" alt="Tesla factory">
+                                </div>
+                                <div class="related-title">
+                                    <a href="https://apnews.com/article/tesla-racism-black-lawsuit-class-action-21c88bddf60eca702560be58429495de" class="related-link" target="_blank">Inside Tesla Factory: Workers Describe Racial Discrimination</a>
+                                </div>
+                            </div>
+                            
+                            <div class="related-story">
+                                <div class="related-image">
+                                    <img src="data:image/jpeg;base64,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" alt="South Africa">
+                                </div>
+                                <div class="related-title">
+                                    <a href="https://www.nbcnews.com/news/world/south-africa-racist-white-farmers-trump-musk-genocide-ramaphosa-rcna190749" class="related-link" target="_blank">Examining Musk's "Genocide" Claims About South Africa</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>The Turd Report</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Advertise</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Sections</h3>
+                    <ul>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">Tech</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Investigations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 The Turd Report - Exposing Corporate Corruption</p>
+                <p class="disclaimer">This website represents protected political speech and commentary on matters of public interest. All statements are sourced from documentable reports and legal filings.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
